@@ -4,10 +4,14 @@ const Date = require("./dateModel");
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+
+app.enable("trust proxy");
 
 app.use(express.json({ limit: "100kb" }));
 app.use(express.urlencoded({ extended: true, limit: "100kb" }));
+
+app.options("*", cors());
 
 app.post("/expiry-date", async (req, res) => {
   try {
