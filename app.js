@@ -4,7 +4,7 @@ const Date = require("./dateModel");
 
 const app = express();
 
-// app.use(cors());
+app.use(cors());
 
 app.enable("trust proxy");
 
